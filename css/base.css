@@ -13,6 +13,8 @@ rem sizes:
 14px = 1rem
 10px = 0.7143rem
 5px = 0.3571rem
+4px = 0.2857rem
+2px = 0.1429rem
 1px = 0.07143rem */
 
 html {
@@ -41,11 +43,21 @@ h1, h2, h3, h4, h5, h6 {
 
 
 h2 {
-    font-size: 1.286rem;
+    font-size: 1.429rem;
 }
 
 h3 {
+    padding-bottom: 0.3571rem;
+    border-bottom: 0.07143rem solid #666; 
+    font-size: 1.286rem;
+}
+
+h4 {
     font-size: 1.143rem;
+}
+
+h5 {
+    font-size: 1rem;
 }
 
 
@@ -56,7 +68,23 @@ p {
 
 ul {
     margin-bottom: 1.429rem;
+    padding-left: 2em;
+}
+
+li {
+    margin-bottom: 0.2857rem;
+}
+
+ul.unstyled {
+    padding-left: 0;
     list-style: none;
+}
+
+pre {
+    margin-bottom: 1.429rem;
+    padding: 0.7143rem;
+    background-color: #efefef;
+    border-radius: 0.3571rem;
 }
 
 

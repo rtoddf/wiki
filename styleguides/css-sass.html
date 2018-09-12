@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>WIKI - rtodd</title>
+        <link href="../css/base.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="container">
+            <div class="grid" data-col="1">
+                <article>
+                    <h2>CSS / Sass Styleguide</h2>
+                    <p>This styleguide is based on the <a href="https://github.com/airbnb/css" target="_blank">Airbnb CSS / Sass Styleguide</a>.</p>
+
+                    <h3>Terminology</h3>
+                    <h4>Rule declaration</h4>
+                    <p>A “rule declaration” is the name given to a selector (or a group of selectors) with an accompanying group of properties. Here's an example:</p>
+
+                    <pre>
+.listing {
+  font-size: 18px;
+  line-height: 1.2;
+}
+</pre>
+
+                    <h4>Selectors</h4>
+                    <p>In a rule declaration, “selectors” are the bits that determine which elements in the DOM tree will be styled by the defined properties. Selectors can match HTML elements, as well as an element's class, ID, or any of its attributes. Here are some examples of selectors:</p>
+
+<pre>
+.my-element-class {
+  /* ... */
+}
+
+[aria-hidden] {
+  /* ... */
+}
+</pre>
+
+                    <h4>Properties</h4>
+                    <p>Finally, properties are what give the selected elements of a rule declaration their style. Properties are key-value pairs, and a rule declaration can contain one or more property declarations. Property declarations look like this:</p>
+
+<pre>
+/* some selector */ {
+  background: #f1f1f1;
+  color: #333;
+}
+</pre>
+
+
+                    <h3>CSS</h3>
+                    <h4>Formatting</h4>
+                    <ul>
+                        <li>Use soft tabs (2 spaces) for indentation</li>
+                        <li>Prefer dashes over camelCasing in class names.
+                        <li>Underscores and PascalCasing are okay if you are using BEM.</li>
+                        <li>Do not use ID selectors</li>
+                        <li>When using multiple selectors in a rule declaration, give each selector its own line.</li>
+                        <li>Put a space before the opening brace { in rule declarations</li>
+                        <li>In properties, put a space after, but not before, the : character.</li>
+                        <li>Put closing braces } of rule declarations on a new line</li>
+                        <li>Put blank lines between rule declarations</li>
+                    </ul>
+
+                    <h5>Bad</h5>
+<pre>
+.avatar{
+    border-radius:50%;
+    border:2px solid white; }
+.no, .nope, .not_good {
+    // ...
+}
+#lol-no {
+    // ...
+}
+</pre>
+
+
+                    <h5>Good</h5>
+<pre>
+.avatar {
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.one,
+.selector,
+.per-line {
+  // ...
+}
+</pre>
+
+
+                    <h4>Comments</h4>
+                    <ul>
+                        <li>Prefer line comments (// in Sass-land) to block comments.</li>
+                        <li>Prefer comments on their own line. Avoid end-of-line comments.</li>
+                        <li>Write detailed comments for code that isn't self-documenting:
+                            <ul>
+                                <li>Uses of z-index</li>
+                                <li>Compatibility or browser-specific hacks</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                    <h4>OOCSS and BEM</h4>
+                    <p>See the <a href="http://getbem.com/" target="_blank">BEM - Block Element Modifier</a> Styleguide.</p>
+
+                    <h4>ID selectors</h4>
+                    <p>While it is possible to select elements by ID in CSS, it should generally be considered an anti-pattern. ID selectors introduce an unnecessarily high level of specificity to your rule declarations, and they are not reusable.</p>
+
+                    <h4>JavaScript hooks</h4>
+                    <p>Avoid binding to the same class in both your CSS and JavaScript. Conflating the two often leads to, at a minimum, time wasted during refactoring when a developer must cross-reference each class they are changing, and at its worst, developers being afraid to make changes for fear of breaking functionality.</p>
+
+                    <p>We recommend creating JavaScript-specific classes to bind to, prefixed with .js-:</p>
+
+<pre>
+&lt;div class="btn btn-primary js-request-to-book"&gt;Request to Book&lt;/div&gt;
+</pre>
+
+                    <h4>Border</h4>
+                    <p>Use 0 instead of none to specify that a style has no border.</p>
+
+                    <h5>Bad</h5>
+<pre>
+.foo {
+  border: none;
+}
+</pre>
+                    <h5>Good</h5>
+<pre>
+.foo {
+  border: 0;
+}
+</pre>
+
+
+
+                    <h3>Sass</h3>
+                    <h4>Syntax</h4>
+                    <ul>
+                        <li>Use the .scss syntax, never the original .sass syntax</li>
+                        <li>Order your regular CSS and @include declarations logically (see below)</li>
+                    </ul>
+                </article>
+			</div>
+		</div>
+	</body>
+</html>
