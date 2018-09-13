@@ -57,9 +57,10 @@
                     <h3>CSS</h3>
                     <h4>Formatting</h4>
                     <ul>
-                        <li>Use soft tabs (2 spaces) for indentation</li>
-                        <li>Prefer dashes over camelCasing in class names.
-                        <li>Underscores and PascalCasing are okay if you are using BEM.</li>
+                        <li>Use 2 spaces for indentation, <strong>not tabs</strong></li>
+                        <li>Set your IDE to remove trailing whitespace on save</li>
+                        <li>Use dashes in class names.
+                        <li>Use BEM.</li>
                         <li>Do not use ID selectors</li>
                         <li>When using multiple selectors in a rule declaration, give each selector its own line.</li>
                         <li>Put a space before the opening brace { in rule declarations</li>
@@ -194,7 +195,7 @@
                     </ol>
 
                     <h4>Variables</h4>
-                    <p>Prefer dash-cased variable names (e.g. $my-variable) over camelCased or snake_cased variable names. It is acceptable to prefix variable names that are intended to be used only within the same file with an underscore (e.g. $_my-variable).</p>
+                    <p><strong>Use dash-cased variable names</strong> (e.g. $my-variable), rather than camelCased or snake_cased variable names. It is acceptable to prefix variable names that are intended to be used only within the same file with an underscore (e.g. $_my-variable).</p>
 
                     <h4>Mixins</h4>
                     <p>Mixins should be used to DRY up your code, add clarity, or abstract complexity--in much the same way as well-named functions. Mixins that accept no arguments can be useful for this, but note that if you are not compressing your payload (e.g. gzip), this may contribute to unnecessary code duplication in the resulting styles.</p>
