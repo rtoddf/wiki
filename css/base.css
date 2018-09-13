@@ -66,7 +66,8 @@ p {
 	margin-bottom: 1.429rem;
 }
 
-ul {
+ul,
+ol {
     margin-bottom: 1.429rem;
     padding-left: 2em;
 }
