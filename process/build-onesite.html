@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>WIKI - rtodd</title>
+        <link href="../css/base.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="container">
+        <div class="grid" data-col="1">
+            <article>
+                <h2>Build Process - One Site</h2>
+
+                <ol>
+                  <li>
+                    <p>Check to make sure you have node installed. In terminal, type:</p>
+<pre>
+node -v
+</pre>
+                    <p>As of this writing, the latest version is 10.0.0. If you need to update node, use these steps in terminal:</p>
+<pre>
+sudo npm install -g n
+
+sudo n stable
+</pre>
+                    <p>If you do not have node installed, go to <a href="https://nodejs.org/en/" target="_blank">https://nodejs.org/en/</a> and follow the instructions to install Node.</p>
+                  </li>
+
+                  <li>
+                    <p>Check to make sure you have npm installed. In terminal, type:</p>
+<pre>
+npm -v
+</pre>
+                    <p>As of this writing, the latest version is 6.4.1. If you need to update npm, use these steps:</p>
+<pre>
+need steps
+</pre>
+                    <p>npm comes with the node installation. If you had to install node, you should have gotten the latest version of npm.</p>
+                  </li>
+
+                  <li>
+                    <p>You are now ready to clone the repository from GitHub to your local drive.</p>
+                    <p>Go to <a href="https://github.com/coxmediagroup/np-one" target="_blank">https://github.com/coxmediagroup/np-one</a></p>
+                    <p>In terminal, navigate to the directory where you want to clone the NP-One repository.</p>
+                    <p>Enter this command:</p>
+<pre>
+git clone https://github.com/coxmediagroup/np-one.git
+</pre>
+                    <p>Change directories to the repo you just cloned:</p>
+<pre>
+cd np-one
+</pre>
+                  </li>
+                  <li>
+                    <p>You now need to install the project.</p>
+                    <p>Make sure you have cd'd into the np-one directory and enter this command:</p>
+<pre>
+npm i
+</pre>
+                    <p><em>**If you're on Windows and get errors, try installing each dependency individually.**</em></p>
+                    <p>Open package.json to see all dependencies. For example:</p>
+<pre>
+npm i grunt
+npm i grunt-contrib-watch
+etc
+</pre>
+                  </li>
+                  <li>
+                    <p>Once that has run, you are ready to start the server and view in a browser locally. Enter the command:</p>
+<pre>
+grunt proxy
+</pre>
+                    <p>Then go to http://localhost:9011/ in a browser.</p>
+                    <p>Work as normal. Any changes you make to css, scss, javascript, and images will retrigger the build process so that they can be viewed locally as you work.</p>
+                    <p>You can control which environment, site, and protocol you wish to create a proxy for using the env, site, and ssl flags.</p>
+<pre>
+grunt proxy --site=[myajc|myddn|spring]
+
+grunt proxy --env=[preview-dev|dev|preview-qa|qa|preview-staging|staging|preview|www]
+
+grunt proxy --ssl=[true|false]
+
+grunt proxy --site=myajc --env=preview-staging --ssl=true
+</pre>
+                  </li>
+                  <li>
+                    <p>Creating a working branch from master, working, code reviews, rebasing and merging: See Developer Docs</p>
+                  </li>
+
+                  <li>
+                    <p>When you're ready to push your stuff to Methode/Eclipse, run the command:</p>
+<pre>
+grunt webpack:prod
+</pre>
+                    <p>to transpile files.</p>
+                  </li>
+
+                  <li>
+                    <p>When you're ready to push your stuff to Methode/Eclipse, run the command:</p>
+<pre>
+grunt webpack:prod
+</pre>
+                    <p>to transpile files.</p>
+                  </li>
+
+                  <li>
+                    <p>Run the command:</p>
+<pre>
+grunt push-all
+</pre>
+                    <p>This command does webpack:prod AND pushes all built assets to Methode/Eclipse.</p>
+                    <p>You can control which environment to push the files to with the env flag.</p>
+<pre>
+grunt push-all --env=[dev|qa|staging|prod]
+</pre>           
+                    <p>You can also choose to push only the JavaScript files, only the CSS files, or individual files.</p>
+<pre>
+grunt push:[js|css]:[section|story|media]
+
+grunt push:js
+
+grunt push:css
+
+grunt push:js:section
+
+grunt push css:media
+</pre>
+                  </li>
+                  <li>
+                    <p>Check your work at preview-dev.site.com</p>
+                  </li>
+                  <li>
+                    <p>See Developer Docs for process steps to commit and publish your changes.</p>
+                  </li>
+                </ol>
+
+                <p><em>Last updated: 09-14-2018 by <a href="mailto:todd.fleeman@coxinc.com">Todd Fleeman</a></em></p>
+            </article>
+			</div>
+		</div>
+	</body>
+</html>
