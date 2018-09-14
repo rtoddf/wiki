@@ -40,7 +40,7 @@ npm -v
 </pre>
                     <p>As of this writing, the latest version is 6.4.1. If you need to update npm, use these steps:</p>
 <pre>
-need steps
+sudo npm install -g npm
 </pre>
                     <p>npm comes with the node installation. If you had to install node, you should have gotten the latest version of npm.</p>
                   </li>
@@ -101,15 +101,6 @@ grunt webpack:prod
 </pre>
                     <p>to transpile files.</p>
                   </li>
-
-                  <li>
-                    <p>When you're ready to push your stuff to Methode/Eclipse, run the command:</p>
-<pre>
-grunt webpack:prod
-</pre>
-                    <p>to transpile files.</p>
-                  </li>
-
                   <li>
                     <p>Run the command:</p>
 <pre>
@@ -121,6 +112,7 @@ grunt push-all
 grunt push-all --env=[dev|qa|staging|prod]
 </pre>           
                     <p>You can also choose to push only the JavaScript files, only the CSS files, or individual files.</p>
+                    <p><em>If you don’t specify the env with the push-all command, then it defaults to dev currently.</em></p>
 <pre>
 grunt push:[js|css]:[section|story|media]
 
