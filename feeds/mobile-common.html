@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>WIKI - rtodd</title>
+        <link href="../css/base.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="container">
+            <div class="grid" data-col="1">
+                <article>
+                    <h2>Mobile Common Feeds</h2>
+                    <h3>History/Initiative</h3>
+                    <p></p>
+                    
+                    <h3>Current Feed URLs</h3>
+                    <h4>Current WHIO App feed</h4>
+<pre>
+https://appconfig.cmgdigital.com/tv/newsapp/4.0/whio/datasources.json
+</pre>
+                    <p>Lakana feeds for other TV sites follow the same structure. Just change the site. For example:
+<pre>
+https://appconfig.cmgdigital.com/tv/newsapp/4.0/wpxi/datasources.json
+</pre>
+                    <p>As a general rule, anything with a UUID is a feed from Methode. For example:
+<pre>
+Local News: https://www.whio.com/feed?id=0face55a-4cf7-11e6-8f16-4a55d4f1e287&count=10
+Crime/Law: https://www.whio.com/feed?id=3ba72402-6095-11e6-a966-478ab287d9a2&count=10
+Top Story: https://www.whio.com/feed?id=bd9d7680-af7e-11e7-b0ea-606811a93215&count=10
+</pre>
+                    <p>The id is the UUID from Methode. It can be the UUID of any object: DWC, Query, story, video, gallery, etc. <em>NOTE: These are production UUIDs. If a migration is needed to a lower env, please contact Digital Support with the UUIDs needed.</em></p>
+                    <p>There are only two params: ott and count. ott is used for Roku, AppleTV, etc. It has not been implemented in the common feed code yet. count is used to limit the number of results. </p>
+                    <pre>
+&count=10 limits to 10 results
+</pre>
+
+                    <h4>Current NP App feed</h4>
+<pre>
+https://newspaper-appconfig.cmgdigital.com/newspaper/newsapp/10.0/ajc/menu.json
+https://newspaper-appconfig.cmgdigital.com/newspaper/newsapp/10.0/dayton/menu.json
+</pre>
+
+                    <p>As a general rule, anything with a UUID is a feed from Methode. For example:
+<pre>
+All News: https://www.ajc.com/api/mobile/v1/list/313411e2-8296-11e6-8459-2fea90c854be/
+All Neighborhoods: https://www.ajc.com/api/mobile/v1/list/4bea31c2-828e-11e6-8459-2fea90c854be/
+Top News: https://www.ajc.com/api/mobile/v1/list/a570940e-829b-11e6-8459-2fea90c854be/
+</pre>
+                    <p>The id is the UUID from Methode. It can be the UUID of any object: DWC, Query, story, video, gallery, etc. <em>NOTE: These are production UUIDs. If a migration is needed to a lower env, please contact Digital Support with the UUIDs needed.</em></p>
+
+                    <h3>New Common Feed URLs</h3>
+                    <p>These urls can be used for any Methode site - WHIO, NP, and Radio. Although, radio does not use them.</p>
+<pre>
+https://www.whio.com/external-feeds/json/apps/v1/?id=0face55a-4cf7-11e6-8f16-4a55d4f1e287&count=10
+https://www.ajc.com/external-feeds/json/apps/v1/?id=a570940e-829b-11e6-8459-2fea90c854be
+</pre>
+                    <p>You can change out the site name and the UUID. As long as the content in that UUID or that object is published to that site, you should get a JSON result.
+
+
+                    <h3>Developer Notes</h3>
+                    <p></p>
+                </article>
+			</div>
+		</div>
+	</body>
+</html>
