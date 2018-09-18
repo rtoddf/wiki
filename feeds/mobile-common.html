@@ -17,8 +17,10 @@
             <div class="grid" data-col="1">
                 <article>
                     <h2>Mobile Common Feeds</h2>
+                    <p>Breaking News feed info will be on another page.</p>
+
                     <h3>History/Initiative</h3>
-                    <p></p>
+                    <p>Because of the different json nodes needed, a copy of /PortalConfig/common/feeds/json was made and renamed /PortalConfig/common/feeds/json-apps. This implementation is v1.0.0.</p>
                     
                     <h3>Current Feed URLs</h3>
                     <h4>Current WHIO App feed</h4>
@@ -65,7 +67,20 @@ https://www.ajc.com/external-feeds/json/apps/v1/?id=a570940e-829b-11e6-8459-2fea
 
 
                     <h3>Developer Notes</h3>
-                    <p></p>
+                    <p>All rewrites can be found here:</p>
+<pre>
+/PortalConfig/common/conf/rewriteurls.xml
+</pre>
+                    <p>Regular feed urls (not breaking news) point here:</p>
+<pre>
+/eom/PortalConfig/common/feeds/json-apps/1.0.0/jsp/externalfeeds.jsp
+</pre>
+
+                    <p>In /eom/PortalConfig/common/feeds/json-apps/1.0.0/jsp/externalfeeds.jsp, if the object is a query or DWC, line 22 sends the object to externalfeeds_content_query.jpt to divide it into it's separate components. Otherwise, it will be sent to /eom/PortalConfig/common/feeds/json-apps/1.0.0/jsp/externalfeeds.jsp. <em>NOTE: this logic can probably be removed since everything goes to the same jsp.</em></p>
+
+                    <p>/PortalConfig/common/feeds/json-apps/1.0.0/jpt/externalfeeds_content_query.jpt sends all objects to /PortalConfig/common/feeds/json-apps/1.0.0/customtags/queryFeedItemOutput.tag to be split out of DWCs or queries into individual items. Each item is then sent to /PortalConfig/common/feeds/json-apps/1.0.0/customtags/storyObjectItemOutput.tag.</p>
+                    <p>/PortalConfig/common/feeds/json-apps/1.0.0/customtags/storyObjectItemOutput.tag is 75% of what was in /PortalConfig/common/feeds/json. There have only been minimal changes.</p>
+                    <p><em>Last updated: 09-18-2018 by <a href="mailto:todd.fleeman@coxinc.com">Todd Fleeman</a></em></p>
                 </article>
 			</div>
 		</div>
