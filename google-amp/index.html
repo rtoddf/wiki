@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>WIKI - rtodd</title>
+        <link href="../css/base.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="container">
+            <div class="grid" data-col="1">
+                <article>
+                    <h2>What is Google Amp?</h2>
+                    <p>AMP is an open-source library that provides a straightforward way to create web pages that are compelling, smooth, and load near instantaneously for users. AMP pages are just web pages that you can link to and are controlled by you.</p>
+
+                    <h3>AMP pages are built with 3 core components:</h3>
+                    <ul>
+                        <li><a href="html.html">AMP HTML</a> AMP HTML is HTML with some restrictions for reliable performance.
+                        <li><a href="js.html">AMP JS</a> The AMP JS library ensures the fast rendering of AMP HTML pages.
+                        <li><a href="cache.html">AMP Cache</a> The Google AMP Cache can be used to serve cached AMP HTML pages.</li>
+                    </ul>
+
+                    <h2>CMGT History</h2>
+                    <p>Lakana sites used <a href="http://www.relaymedia.com/" target="_blank">Relay Media</a> for their amp pages. Relay Media has since been acquired by Google.</p>
+					<p>At the time, the TV and NP development teams were challenged to see if they could develop Google Amp pages in house. TV (WHIO) and the NP sites started off by doing the development in tandem, but because of fluctuating timelines, code deviated.</p>
+
+					<h3>Deviation areas:</h3>
+					<ul>
+						<li>Design</li>
+						<li>Story text processing</li>
+						<li>Some social media embed implementations</li>
+						<li>Multiple implementations of the same codebase on one vertical - NP Free vs NP-Paid vs NP-One</li>
+                    </ul>
+                    
+                    <h3>Implementation:</h3>
+                    <p>Google scrapes sites to find a meta tag:</p>
+<pre>&lt;link rel="amphtml" href="https://www.whio.com/news/local/cause-greene-county-strange-odor-not-yet-determined/mLZJvx2Q5OT36l02HMNv5K/amp.html"&gt;</pre>
+                    <p>It will then validate the page. If the page amp page validates, Google will cache the story on their CDN and serve it from there.</p>
+                    <p>The corresponding amp page must have a meta tag that directs back to the full version:</p>
+<pre>&lt;link rel="canonical" href="https://www.whio.com/news/local/cause-greene-county-strange-odor-not-yet-determined/mLZJvx2Q5OT36l02HMNv5K/" /&gt;</pre>
+
+                    <h3>How to view a Google Amp page</h3>
+                    <p><strong>NOTE:</strong> The amp page url in the meta tag is NOT what the viewer sees. It is a url that we supply to Google to scrape against. The page that is seen by the user is th cached CDN version.</p>
+                    <p>On a mobile device, do a search for "Dayton news" or "Atlanta news". Any story with the lightning bolt symbol is an Amp-enabled story. You will not see this on desktop. If you want to see the Google Amp page on desktop, you'll have to set the user-agent for your browser to a mobile device. The amp.html version in the meta tag is NOT what the user sees. See below.</p>
+
+                    <h3>CMGT Amp Page Implementation:</h3>
+                    <p>The "amp.html" implementation is NOT a Google implementation. It is a Methode/CMG implementation. A story, video, gallery, etc leaf page is pointed in Portal Editor under "leaves". An object can only go to one jpt/file. The exception is when a facet is added to the leaf in Portal Editor.</p>
+                    <p>For example, a web story leaf page points to /PortalConfig/tv-wired/jpt/story/page.jpt and inherits the same frameset as all other pages. If a story page ends in amp.html, it is pointed to /PortalConfig/common/google-amp/jpt/story.jpt and can have a different frameset: /PortalConfig/common/google-amp/frameset-amp.jpt.</p>
+                    <p>CMG has multiple facets in use - one from iframes (iframe.html), one for json (json.html), etc.</p>
+
+                    <h3>Common Google Amp Implementation Proposal:</h3>
+                    <p>Currently, there are multiple implementations for Google Amp pages: TV (WHIO), NP-Free, NP-Paid, NP-One, Radio Music, etc. </p>
+                    <p>This causes issues. Other than Digital Customer Service, no one person has access to the Google Dashboard to see the traffic and error reports. When errors spike, developers have to go to multiple codebases to fix the issue IF they are even aware there IS an issue.</p>
+                    <p>With a common codebase implementation for Google Amp pages, if there are errors, they would be common acorss all sites/verticals and cna be recognized, fixed, and deployed easier.</p> 
+                </article>
+			</div>
+		</div>
+	</body>
+</html>
